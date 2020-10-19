@@ -17,7 +17,7 @@ class FileDataHandler(FileSystemEventHandler):
 
     """ This is the class which inherits the FileSystemEventHandler
         class. For this class, we'are going to handle data prep and 
-        insert the data from a text file to Sql database
+        insert the data from a text file to Sql database table
     """
 
     i = 1
@@ -49,7 +49,7 @@ class FileDataHandler(FileSystemEventHandler):
                print("Program successfully executed!")
 
        except Exception as e:
-           print("An error has occured: ", e)
+           print("An error has occured:", e)
 
     # Method which does the data preparation before writing them to the database. 
     def prepare_data(self, filename_complete_path):
@@ -88,7 +88,7 @@ class FileDataHandler(FileSystemEventHandler):
         return value 
 
 # It stabilishes the base of FileDataHandler in addition folder to be tracked and folder destination
-# Verify if the folder_to_track and folder_destination are created if not it creates them all 
+# Verify if the folder_to_track and folder_destination are created if not it creates them all
 folder_to_track = r'C:\Files'
 folder_destination = r'C:\Files\ProcessedFiles'
 

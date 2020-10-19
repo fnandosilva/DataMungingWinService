@@ -1,5 +1,5 @@
 import sys
-import cx_Freeze 
+import cx_Freeze
 import os
 import matplotlib
 
