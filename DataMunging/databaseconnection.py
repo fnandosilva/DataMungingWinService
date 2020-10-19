@@ -13,12 +13,13 @@ username = 'sa'
 password = 'Ie^oWpRoj5uD'
 
 def create_sql_connection():
+    print("Opening the SQL database conection")
     conn = pyodbc.connect('Driver={SQL Server};Server='+server+';Database='+database+';UID='+username+';PWD='+password)
     cursor = conn.cursor()
     return cursor
     
 def insert_into_table_CustomersPurchase(dataframe):
-    print("Insert data into table CustomersPurchase")
+    print("Inserting data into table CustomersPurchase")
     sql_connection = create_sql_connection()
     for index, row in dataframe.iterrows():
         sql_connection.execute("insert into CustomersPurchase(CPF, Private, Incompleto, DataUltimaCompra, TicketMedio, TicketUltimaCompra, LojaMaisFrequente, LojaUltimaCompra) values(?,?,?,?,?,?,?,?)", 
@@ -27,7 +28,7 @@ def insert_into_table_CustomersPurchase(dataframe):
     sql_connection.close()
 
 def create_table_CustomersPurchase():
-    print("Create table CustomersPurchase if not exists")
+    print("Creating the table CustomersPurchase if not exists")
     sql_connection = create_sql_connection()
     sql_connection.execute("if OBJECT_ID('CustomersPurchase') IS NULL CREATE TABLE [dbo].CustomersPurchase (CPF nvarchar(18), Private bit," + 
                            " Incompleto bit, DataUltimaCompra date, TicketMedio nvarchar(100), TicketUltimaCompra nvarchar(100) null," +
