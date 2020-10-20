@@ -20,7 +20,7 @@ executables = [cx_Freeze.Executable("datamungingwinservice.py", base = base)]
 cx_Freeze.setup( 
     name = "Data Munging Win Service",
     options = {"build_exe": {"packages":["watchdog", "watchdog.observers", "watchdog.events","pandas","numpy","os","sys","tkinter","openpyxl","datetime","csv",
-                                         "unicodedata","getpass","re","json","pyodbc","getpass","http","glob","pathlib","databaseconnection","pathtools"]}},
+                                         "unicodedata","getpass","re","json","pyodbc","getpass","http","glob","pathlib","databaseconnection","pathtools","filedatamanipulation"]}},
     version = "0.0.1",
     description = "",
     executables = executables
