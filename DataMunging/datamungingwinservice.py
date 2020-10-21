@@ -24,9 +24,12 @@ class FileDataHandler(FileSystemEventHandler):
 
     # The event method which whatches text files (.csv or .txt)
     def on_modified(self, event):
+
        logging.basicConfig(filename = r'C:\Files\ErrorLog\erros.Log', level = logging.DEBUG)
        logger = logging.getLogger()
        start_time = time.time()
+
+       dt_now = datetime.now()
 
        i = 1
 
@@ -54,13 +57,14 @@ class FileDataHandler(FileSystemEventHandler):
            print("An error has occured:", e)
            logger.error(e)
        finally:
+           dt_string = dt_now.strftime('%d/%m/%Y %H:%M:%S')
            stop_time = time.time()
-           dt = stop_time - start_time
-           logger.info('Time required for {file} = {time}'.format(file=filename, time=dt))
+           dt_time = stop_time - start_time
+           logger.info('Time required for {file} = {time} - {datetime}'.format(file=filename, time=dt_time, datetime=dt_string))
 
+# It stabilishes the base of FileDataHandler in addition folder to be tracked and folder destination
+# Verify if the folder_to_track and folder_destination are created if not it creates them all
 if __name__ == "__main__":
-    # It stabilishes the base of FileDataHandler in addition folder to be tracked and folder destination
-    # Verify if the folder_to_track and folder_destination are created if not it creates them all
     folder_to_track = r'C:\Files'
     folder_destination = r'C:\Files\ProcessedFiles'
     folder_errorlog = r'C:\Files\ErrorLog'

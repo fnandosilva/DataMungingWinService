@@ -7,10 +7,10 @@ import pandas as pd
    but only the create were built. 
 """
 
-server = 'Insert a valid SQL Server here'
-database = 'Insert a valid SQL Database here'
-username = 'Insert a valid Username here'
-password = 'Insert a valid password here'
+server = 'DESKTOP-BG41172\SQLEXPRESS'
+database = 'bd_dev'
+username = 'sa'
+password = 'Ie^oWpRoj5uD'
 
 def create_sql_connection():
     print("Opening the SQL database conection")

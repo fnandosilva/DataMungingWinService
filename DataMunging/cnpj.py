@@ -1,7 +1,7 @@
 class Cnpj:
 
     """This is the class made to validate Cnpj document.
-       There is a method that validad the object passed through
+       There is a method that validates the object passed through
        this class. 
     """
 
