@@ -4,7 +4,7 @@ This project was built as a service which manipulates text files data and writes
 
 In the DataMunging we have all scripts used to develop this service.
 
-In this folder there is a executable file named datamungingwinservice.exe. Once, double-clicked on this executable file the service is going to be running behind the scenes.
+In this folder there is an executable file named datamungingwinservice.exe. Once, double-clicked on this executable file the service is going to be running behind the scenes.
 
 It is going to create a folder called Files on the path "C:" which is going to be processed text files. Also, inside folder Files is going to be created two other files called ProcessedFiles and ErrorLog. The ProcessedFiles is the folder that keeps all processed and moved files from folder Files. The ErrorLog is the folder that keeps the error file with all processing errors from the service.
 
